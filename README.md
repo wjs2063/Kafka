@@ -1,2 +1,1 @@
-# kafka-python
-kafka python 개인공부
+# Kafka 공부
