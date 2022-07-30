@@ -6,7 +6,12 @@
 - 파일 -> Invalidate Caches / Restart 를 해본다
 - view -> Tool windows -> Gradle -> Refresh Gradle dependencies 
 
+- 
 
+
+
+
+- TOPIC 생성
 ```
 bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic first-kafka01
 ```
