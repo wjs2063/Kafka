@@ -8,7 +8,7 @@
 
 
 ```
-bin/kafka-topics.sh --bootstrap-server first-kafka01:9092 --create --topic peter-basic01 --partitions 1 --replication-factor 1
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic first-kafka01
 ```
 
 
