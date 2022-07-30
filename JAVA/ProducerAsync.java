@@ -19,16 +19,29 @@ public class ProducerAsync {
 
         Producer<String, String> producer = new KafkaProducer<>(props); //Properties 오브젝트를 전달해 새 프로듀서를 생성합니다.
 
-        try {
-            for (int i = 0; i < 3; i++) {
-                ProducerRecord<String, String> record = new ProducerRecord<>("peter-basic01", "Apache Kafka is a distributed streaming platform - " + i); //ProducerRecord 오브젝트를 생성합니다.
-                producer.send(record, new PeterProducerCallback(record)); //프로듀서에서 레코드를 보낼 때 콜백 오브젝트를 같이 보냅니다.
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        } finally {
-            producer.close(); // 프로듀서 종료
+        while(true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Input > ");
+            String message = sc.nextLine();
 
+            ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC_NAME, message);
+            try {
+                producer.send(record, (metadata, exception) -> {
+                    if (exception != null) {
+                        // some exception
+                    }
+                });
+
+            } catch (Exception e) {
+                // exception
+            } finally {
+                producer.flush();
+            }
+
+            if (StringUtils.equals(message, FIN_MESSAGE)) {
+                producer.close();
+                break;
+            }
         }
     }
 }
