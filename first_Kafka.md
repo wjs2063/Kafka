@@ -22,20 +22,21 @@ bin/kafka-server-start.sh config/server.properties           : Kafka 서버 실�
 
 ### STEP 3
 ```
- bin/kafka-topics.sh --create --topic first-kafka --bootstrap-server localhost:9092
+ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic first-kafka01
 ```
+- partition 수보다 replication 수가 클수없다
 정상적으로 생성됐다.
 
 ### STEP 4
 토픽이 잘 생성되었는지 판단하는 command
 ```
-bin/kafka-topics.sh --describe --topic first-kafka --bootstrap-server localhost:9092
+bin/kafka-topics.sh --describe --topic first-kafka01 --bootstrap-server localhost:9092
 ```
 
 ### STEP 5
 프로듀서 생성
 ```
-bin/kafka-console-producer.sh --topic first-kafka --bootstrap-server localhost:9092 
+bin/kafka-console-producer.sh --topic first-kafka01 --bootstrap-server localhost:9092 
 ```
 실행하면 메세지들 입력가능 
 원하는대로 입력해본다 
@@ -43,7 +44,7 @@ bin/kafka-console-producer.sh --topic first-kafka --bootstrap-server localhost:9
 ### STEP 6
 
 ```
-bin/kafka-console-consumer.sh --topic first-kafka --from-beginning --bootstrap-server localhost:9092
+bin/kafka-console-consumer.sh --topic first-kafka01 --from-beginning --bootstrap-server localhost:9092
 ```
 실행하면 내가보낸 메세지들이 잘 전송이되었다는것을 알수있다.
 
