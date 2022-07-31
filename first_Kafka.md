@@ -24,7 +24,7 @@ bin/kafka-server-start.sh config/server.properties           : Kafka 서버 실�
 ```
  bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic first-kafka01
 ```
-- partition 수보다 replication 수가 클수없다
+
 정상적으로 생성됐다.
 
 ### STEP 4
