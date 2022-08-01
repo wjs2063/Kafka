@@ -6,6 +6,24 @@
 
 # USAGE
 
+### Zookeeper 실행
 ```
- ZOOKEEPER, KAFKA 서버 실행후 토픽생성 그리고 CONSUMER 파일 실행후 PRODUCER 파일 실행후 메세지전송 잘 전송되는것을 알수있다.
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
+
+### Kafka server 실행
+```
+bin/kafka-server-start.sh config/server.properties
+```
+
+
+### TOPIC 생성
+```
+in/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic first-kafka01
+```
+
+```
+
+```
+
 ```
