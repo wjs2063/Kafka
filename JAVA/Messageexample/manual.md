@@ -22,8 +22,3 @@ bin/kafka-server-start.sh config/server.properties
 in/kafka-topics.sh --create --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1 --topic first-kafka01
 ```
 
-```
-
-```
-
-```
