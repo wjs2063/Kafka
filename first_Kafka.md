@@ -1,5 +1,5 @@
 
-카프카의 폴더 : /Users/pn_jh/Desktop/kafka/kafka_2.13-3.2.0
+카프카의 폴더 : /Users/pn_jh/Desktop/kafka/kafka_2.13-3.2.0  ( 다운받은 주소로 선택하면됨)
 
 ## 실행준비 
 
